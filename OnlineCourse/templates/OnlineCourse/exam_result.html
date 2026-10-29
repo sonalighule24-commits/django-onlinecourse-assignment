@@ -14,17 +14,14 @@
                 <h1 class="text-success">Congratulations!</h1>
                 <h2>Your Exam Results</h2>
 
-                <p class="fs-4">
-                    Score: {{ score }} / {{ total }}
-                </p>
+                <p class="fs-4">Score: {{ score }} / {{ total }}</p>
 
                 <h3>Answer Review</h3>
 
                 {% for result in results %}
                     <div class="alert {% if result.is_correct %}alert-success{% else %}alert-danger{% endif %} text-start">
-                        <strong>{{ forloop.counter }}. {{ result.question }}</strong><br>
-                        Your answer: {{ result.selected_choice }}<br>
-
+                        <strong>{{ forloop.counter }}. {{ result.question }}</strong>
+                        <p>Your answer: {{ result.selected_choice }}</p>
                         {% if result.is_correct %}
                             Correct answer!
                         {% else %}
